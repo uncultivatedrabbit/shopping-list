@@ -1,5 +1,5 @@
 // function that accounts for submitting by clicking the 'Add item" button or by pressing 'Enter'
-function handleSubmit(){
+function handleSubmit() {
   $("#js-shopping-list-form").submit(e => {
     // stop the form from refreshing the page
     e.preventDefault();
@@ -30,7 +30,7 @@ function handleSubmit(){
 }
 
 // function that uses event deligation to put an event listener on the shopping list
-function toggleClass(){
+function toggleClass() {
   $(".shopping-list").on("click", ".shopping-item-toggle", function(e) {
     // uses this instead of e.currentTarget then traverses the DOM tree to toggle class on specific shopping item
     $(this)
@@ -38,12 +38,10 @@ function toggleClass(){
       .siblings(".shopping-item")
       .toggleClass("shopping-item__checked");
   });
-
 }
 
-
 // function that removes an item from the shopping list
-function removeItem(){
+function removeItem() {
   $(".shopping-list").on("click", ".shopping-item-delete", function(e) {
     $(this)
       .closest("li")
@@ -51,12 +49,11 @@ function removeItem(){
   });
 }
 
-
 //function that handles DOM load
-function handleRender(){
-  handleSubmit()
-  removeItem()
-  toggleClass()
+function handleRender() {
+  handleSubmit();
+  removeItem();
+  toggleClass();
 }
 
-$(handleRender)
+$(handleRender);
